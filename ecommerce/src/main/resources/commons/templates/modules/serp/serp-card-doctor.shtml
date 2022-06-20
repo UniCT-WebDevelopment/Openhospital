@@ -1,0 +1,31 @@
+<#list proposals as proposal>
+  <!-- Result card ${(proposal.proposalId)!""} -->
+  <div class="card mb-3 result-card doctor-card">
+    <form action="/${lang}/add-to-cart" method="post">
+      <input type="hidden" name="proposalId" value="${proposal.proposalId}">
+      <div class="row no-gutters">
+        <div class="col-md-7">
+          <div class="card-body">
+            <h5 class="card-title">${(proposal.productDescription)!""}</h5>
+            <p class="card-info"><small class="text-muted">${(proposal.wardDescription)!""}</small></p>
+            <p class="card-info"><small class="text-muted"><i class="fas fa-mobile"></i> <@spring.message "serp.product-card.doctor.mobile-phone"/> ${(proposal.mobilePhone)!""}</small></p>
+            <p class="card-info"><small class="text-muted"><i class="fas fa-phone-alt"></i> <@spring.message "serp.product-card.doctor.office-phone"/> ${(proposal.officePhone)!""}</small></p>
+            <p class="card-text d-none">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+        <!-- Currently removed. Restore if you want to allow a doctor check-up visit
+        <#if proposal.price??>
+          <div class="col-md-5 mb-5 mb-md-0">
+            <div class="d-flex align-items-center justify-content-center h-100">
+              <div class="text-center">
+                <h5 class="price">${(proposal.price)!""} &euro;</h5>
+                <button type="submit" class="btn btn-dark"><@spring.message "serp.product-card.button.label"/></button>
+              </div>
+            </div>
+          </div>
+        </#if>
+        -->
+      </div>
+    </form>
+  </div>
+</#list>

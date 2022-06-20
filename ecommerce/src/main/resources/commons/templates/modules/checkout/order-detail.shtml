@@ -1,0 +1,40 @@
+<!-- Summary card -->
+<div class="card shadow mb-3 summary-card">
+  <div class="card-header p-3">
+    <@spring.message "checkout.order-detail.summary"/>
+  </div>
+  <div class="card-body p-5">
+    <div class="product-list">
+      <#list cart.elements as productCart>
+        <div class="product">
+          <div class="row">
+            <div class="col-md-9">
+              <h5 class="card-title">${(productCart.productDescription)!""}</h5>
+              <p class="card-text">${(modelUtils.getPrintableCheckIn(productCart.checkIn))!""}</p>
+            </div>
+            <div class="col-md-3">
+              <div class="price">
+                ${(productCart.price)!""} &euro;
+              </div>
+            </div>
+          </div>
+        </div>
+      </#list>
+    </div>
+    <div class="total">
+      <div class="row border-top border-1 pt-1">
+        <div class="col-7">
+          <@spring.message "checkout.order-detail.total"/>
+        </div>
+        <div class="col-5">
+          <div class="price">
+            ${(cart.getTotal())!""} &euro;
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer text-muted">
+    <button type="submit" class="btn btn-success w-100 p-2" <#if profile??><#else>disabled</#if>><@spring.message "checkout.order-detail.buy-now"/></button>
+  </div>
+</div>

@@ -1,0 +1,70 @@
+<!-- Userdata card -->
+<div class="card shadow mb-3 order-card">
+  <div class="card-header p-3">
+    <@spring.message "thank-you.order-data.title"/>
+  </div>
+  <div class="card-body p-5">
+    <div class="row g-3 mb-4">
+      <div class="col">
+        <h6 class="card-subtitle text-muted"><@spring.message "thank-you.order-data.name"/></h6>
+        <p class="card-text">${(userdata.name)!""}</p>
+      </div>
+      <div class="col">
+        <h6 class="card-subtitle text-muted"><@spring.message "thank-you.order-data.surname"/></h6>
+        <p class="card-text">${(userdata.surname)!""}</p>
+      </div>
+    </div>
+    <div class="row g-3 mb-4">
+      <div class="col">
+        <h6 class="card-subtitle text-muted"><@spring.message "thank-you.order-data.taxCode"/></h6>
+        <p class="card-text">${(userdata.taxCode)!""}</p>
+      </div>
+    </div>
+    <div class="row g-3 mb-4">
+      <div class="col">
+        <h6 class="card-subtitle text-muted"><@spring.message "thank-you.order-data.country"/></h6>
+        <p class="card-text">${(userdata.country)!""}</p>
+      </div>
+      <div class="col">
+        <h6 class="card-subtitle text-muted"><@spring.message "thank-you.order-data.city"/></h6>
+        <p class="card-text">${(userdata.city)!""}</p>
+      </div>
+    </div>
+    <div class="row g-3 mb-4">
+      <div class="col">
+        <h6 class="card-subtitle text-muted"><@spring.message "thank-you.order-data.province"/></h6>
+        <p class="card-text">${(userdata.province)!""}</p>
+      </div>
+      <div class="col">
+        <h6 class="card-subtitle text-muted"><@spring.message "thank-you.order-data.post-code"/></h6>
+        <p class="card-text">${(userdata.postCode)!""}</p>
+      </div>
+    </div>
+    <div class="row g-3 mb-4">
+      <div class="col">
+        <h6 class="card-subtitle text-muted"><@spring.message "thank-you.order-data.address"/></h6>
+        <p class="card-text">${(userdata.address)!""}</p>
+      </div>
+      <div class="col">
+        <h6 class="card-subtitle text-muted"><@spring.message "thank-you.order-data.address-number"/></h6>
+        <p class="card-text">${(userdata.addressNumber)!""}</p>
+      </div>
+    </div>
+    <div class="row g-3 mb-4">
+      <div class="col">
+        <h6 class="card-subtitle text-muted"><@spring.message "thank-you.order-data.email"/></h6>
+        <p class="card-text">${(userdata.email)!""}</p>
+      </div>
+      <div class="col">
+        <h6 class="card-subtitle text-muted"><@spring.message "thank-you.order-data.phone"/></h6>
+        <p class="card-text">${(userdata.phone)!""}</p>
+      </div>
+    </div>
+    <div class="row g-3 mb-4">
+      <div class="col">
+        <h6 class="card-subtitle text-muted"><@spring.message "thank-you.order-data.message"/></h6>
+        <p class="card-text">${(purchase.note)!"-"}</p>
+      </div>
+    </div>
+  </div>
+</div>

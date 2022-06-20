@@ -1,0 +1,85 @@
+<section id="widget-tabs" <#if editWidget??> class="edit-widget"</#if>>
+    <div class="container px-5">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-health-tab" data-bs-toggle="tab" data-bs-target="#nav-health" type="button" role="tab" aria-controls="nav-health" aria-selected="true">
+                    <span><i class="fas fa-hand-holding-medical"></i> <@spring.message "hp.widget.health.tab-title" /></span>
+                </button>
+                <button class="nav-link" id="nav-doctor-tab" data-bs-toggle="tab" data-bs-target="#nav-doctor" type="button" role="tab" aria-controls="nav-doctor" aria-selected="false">
+                    <span><i class="fas fa-user-md"></i> <@spring.message "hp.widget.doctor.tab-title" /></span>
+                </button>
+            </div>
+        </nav>
+        <div class="tab-content shadow-lg" id="nav-tabContent">
+            <div class="tab-pane fade <#if widgetActiveTab?? && widgetActiveTab == 'health'>show active</#if>" id="nav-health" role="tabpanel" aria-labelledby="nav-health-tab">
+                <div class="header-tab">
+                    <h2 class="title"><@spring.message "hp.widget.health.tab-content.title" /></h2>
+                    <p class="text"><@spring.message "hp.widget.health.tab-content.description" /></p>
+                </div>
+                <form action="/${lang}/search/health" method="GET">
+                    <div class="form f-widget-box">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-5">
+                                <div class="form-floating">
+                                    <select class="form-select" name="wardCode" id="ward-select" required>
+                                        <option value="" hidden=""></option>
+                                        <#include "/modules/widget/options/ward-options.shtml" parse=true>
+                                    </select>
+                                    <label for="ward-select"><@spring.message "hp.widget.health.tab-content.ward-select.label" /></label>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-2">
+                                <div class="form-floating datepicker-container">
+                                    <input type="text" class="form-control" name="checkIn" id="health-date" autocomplete="off" value="${(requestBody.checkIn)!''}" required>
+                                    <label for="health-date"><@spring.message "hp.widget.health.tab-content.check-in-date" /></label>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-2">
+                                <div class="form-floating datepicker-container">
+                                    <select class="form-select" name="checkInTime" id="health-hour" required>
+                                        <option value="" hidden=""></option>
+                                        <#include "/modules/widget/options/hour-options.shtml" parse=true>
+                                    </select>
+                                    <label for="health-hour"><@spring.message "hp.widget.health.tab-content.check-in-hour" /></label>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-3 align-self-center text-center">
+                                <button type="submit" class="btn btn-dark widget-button"><@spring.message "hp.widget.health.tab-content.submit-button.label" /></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="tab-pane fade <#if widgetActiveTab?? && widgetActiveTab == 'doctor'>show active</#if>" id="nav-doctor" role="tabpanel" aria-labelledby="nav-doctor-tab">
+                <div class="header-tab">
+                    <h2 class="title"><@spring.message "hp.widget.doctor.tab-content.title" /></h2>
+                    <p class="text"><@spring.message "hp.widget.doctor.tab-content.description" /></p>
+                </div>
+                <form action="/${lang}/search/doctor" method="GET">
+                    <div class="form f-widget-box">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-6">
+                                <div class="form-floating">
+                                    <select class="form-select" name="wardCode" id="doctor-ward-select" required>
+                                        <option value="" hidden=""></option>
+                                        <#include "/modules/widget/options/ward-options.shtml" parse=true>
+                                    </select>
+                                    <label for="doctor-ward-select"><@spring.message "hp.widget.doctor.tab-content.ward-select.label" /></label>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-3">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" name="doctor" id="floatingDoctorName" value="${(requestBody.doctor)!''}">
+                                    <label for="floatingDoctorName"><@spring.message "hp.widget.doctor.tab-content.doctor-input.label" /></label>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-3 align-self-center text-center">
+                                <button type="submit" class="btn btn-dark widget-button"><@spring.message "hp.widget.doctor.tab-content.submit-button.label" /></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

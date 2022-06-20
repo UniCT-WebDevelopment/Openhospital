@@ -1,0 +1,33 @@
+
+<!-- Page Content-->
+<section class="bg-light py-5">
+    <!-- Edit Widget -->
+    <#include "/modules/widget/widget.shtml" parse=true>
+
+    <!-- Search Result -->
+    <div class="container px-5 my-5 result-container">
+        <div class="row gx-5">
+            <!-- Column Left -->
+            <#include "/modules/serp/serp-filter-doctor.shtml" parse=true>
+            <!-- Column Center -->
+            <div class="col-xl-6 mb-5 mb-lg-0">
+                <h2 class="fw-bolder mb-3">
+                    <#list wards as ward>
+                        <#if ward.wardCode?? && requestBody.wardCode?? && ward.wardCode == requestBody.wardCode>
+                            <span class="service-name"><i class="fas fa-user-md"></i> ${(ward.wardDescription)!""}</span>:
+                        </#if>
+                    </#list>
+                    <span class="total-results">
+                        ${totalResults}
+                    </span> <@spring.message "serp.main.total-results.label" />
+                </h2>
+                <!-- Result cards -->
+                <#if proposals?has_content>
+                    <#include "/modules/serp/serp-card-doctor.shtml" parse=true>
+                </#if>
+            </div>
+            <!-- Column Right -->
+            <#include "/modules/serp/serp-extra-doctor.shtml" parse=true>
+        </div>
+    </div>
+</section>

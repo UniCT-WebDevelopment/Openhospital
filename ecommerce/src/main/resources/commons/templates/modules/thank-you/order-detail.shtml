@@ -1,0 +1,28 @@
+<!-- Summary card -->
+<div class="card shadow mb-3 summary-card">
+  <div class="card-header p-3">
+    <@spring.message "thank-you.order-detail.summary"/>
+  </div>
+  <div class="card-body p-5 pb-3">
+    <div class="product-list">
+      <#list products as product>
+      <div class="product">
+        <div class="row">
+          <div class="col-md-9">
+            <h5 class="card-title">${(product.productDescription)!""}</h5>
+            <p class="card-text">${(modelUtils.getPrintableCheckIn(product.checkIn))!""}</p>
+          </div>
+          <div class="col-md-3">
+            <div class="price">
+              ${(product.price)!""} &euro;
+            </div>
+          </div>
+        </div>
+      </div>
+    </#list>
+  </div>
+</div>
+<div class="card-footer bg-dark text-white">
+  <span><@spring.message "thank-you.order-detail.total"/> <span class="price"> ${(purchase.price)!""} &euro;</span></span>
+</div>
+</div>

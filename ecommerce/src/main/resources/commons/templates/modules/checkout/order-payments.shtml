@@ -1,0 +1,48 @@
+<div class="card shadow mb-3 payment-methods-card">
+  <div class="card-body p-5">
+    <div class="row g-3">
+      <div class="col mb-5">
+        <span class="fw-bolder"><@spring.message "checkout.order-payments.title"/></span>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col">
+        <!-- Credit Card radio -->
+        <div class="form-control mb-3">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="paymentMethod" id="cdc-method" value="cc" checked>
+            <label class="form-check-label" for="cdc-method">
+              <@spring.message "checkout.order-payments.cdc"/>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col">
+        <!-- Paypal radio -->
+        <div class="form-control mb-3">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="paymentMethod" id="paypal-method" value="paypal" checked>
+            <label class="form-check-label" for="paypal-method">
+              <@spring.message "checkout.order-payments.paypal"/>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col">
+        <!-- Bank Transfer radio -->
+        <div class="form-control mb-3">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="paymentMethod" id="bank-method" value="bankTransfer">
+            <label class="form-check-label" for="bank-method">
+              <@spring.message "checkout.order-payments.bank-transfer"/>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

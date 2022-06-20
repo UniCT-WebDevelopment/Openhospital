@@ -1,0 +1,115 @@
+<div class="p-5">
+  <div class="row g-3">
+    <div class="col-12 mb-3">
+      <span class="fw-bolder"><@spring.message "checkout.order-data.title"/></span>
+    </div>
+  </div>
+  <#if profile??>
+  <#else>
+    <div class="row g-3 pb-5">
+      <div class="col-12">
+        <button type="button" class="btn btn-dark w-100 p-2" data-bs-toggle="modal" data-bs-target="#loginModalFullscreen"><@spring.message "checkout.order-data.login-button"/></button>
+      </div>
+    </div>
+  </#if>
+  <div class="row g-3">
+    <div class="col-6">
+      <!-- Name input-->
+      <div class="form-floating mb-3">
+        <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..." <#if profile??>value='${(profile.name)!""}'</#if> required>
+        <label for="name"><@spring.message "checkout.order-data.name"/></label>
+      </div>
+    </div>
+    <div class="col-6">
+      <!-- Surname input-->
+      <div class="form-floating mb-3">
+        <input class="form-control" id="surname" name="surname" type="text" placeholder="Enter your surname..." <#if profile??>value='${(profile.surname)!""}'</#if> required>
+        <label for="surname"><@spring.message "checkout.order-data.surname"/></label>
+      </div>
+    </div>
+  </div>
+  <div class="row g-3">
+    <div class="col-12">
+      <!-- TaxCode input-->
+      <div class="form-floating mb-3">
+        <input class="form-control" id="taxCode" name="taxCode" type="text" placeholder="Enter your taxCode..." <#if profile??>value='${(profile.taxCode)!""}'</#if> required>
+        <label for="taxCode"><@spring.message "checkout.order-data.taxCode"/></label>
+      </div>
+    </div>
+  </div>
+  <div class="row g-3">
+    <div class="col-12">
+      <!-- Country input-->
+      <div class="form-floating mb-3">
+        <input class="form-control" id="country" name="country" type="text" placeholder="Enter your country..." <#if profile??>value='${(profile.country)!""}'</#if> required>
+        <label for="country"><@spring.message "checkout.order-data.country"/></label>
+      </div>
+    </div>
+  </div>
+  <div class="row g-3">
+    <div class="col-6">
+      <!-- City input-->
+      <div class="form-floating mb-3">
+        <input class="form-control" id="city" name="city" type="text" placeholder="Enter your city..." <#if profile??>value='${(profile.city)!""}'</#if> required>
+        <label for="city"><@spring.message "checkout.order-data.city"/></label>
+      </div>
+    </div>
+    <div class="col-3">
+      <!-- Province input-->
+      <div class="form-floating mb-3">
+        <input class="form-control" id="province" name="province" type="text" placeholder="Enter your province..." <#if profile??>value='${(profile.province)!""}'</#if> required>
+        <label for="province"><@spring.message "checkout.order-data.province"/></label>
+      </div>
+    </div>
+    <div class="col-3">
+      <!-- PostCode input-->
+      <div class="form-floating mb-3">
+        <input class="form-control" id="postCode" name="postCode" type="text" placeholder="Enter your postCode..." <#if profile??>value='${(profile.postCode)!""}'</#if> required>
+        <label for="postCode"><@spring.message "checkout.order-data.post-code"/></label>
+      </div>
+    </div>
+  </div>
+  <div class="row g-3">
+    <div class="col-8">
+      <!-- Address input-->
+      <div class="form-floating mb-3">
+        <input class="form-control" id="address" name="address" type="text" placeholder="Enter your address..." <#if profile??>value='${(profile.address)!""}'</#if> required>
+        <label for="address"><@spring.message "checkout.order-data.address"/></label>
+      </div>
+    </div>
+    <div class="col-4">
+      <!-- Address number input-->
+      <div class="form-floating mb-3">
+        <input class="form-control" id="addressNumber" name="addressNumber" type="text" placeholder="Enter your address number..." <#if profile??>value='${(profile.addressNumber)!""}'</#if> required>
+        <label for="addressNumber"><@spring.message "checkout.order-data.address-number"/></label>
+      </div>
+    </div>
+  </div>
+  <div class="row g-3">
+      <div class="col-12">
+      <!-- Email address input-->
+      <div class="form-floating mb-3">
+        <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com" <#if profile??>value='${(profile.email)!""}'</#if> required>
+        <label for="email"><@spring.message "checkout.order-data.email"/></label>
+      </div>
+    </div>
+  </div>
+  <div class="row g-3">
+    <div class="col-12">
+      <!-- Password input-->
+      <div class="form-floating mb-3">
+        <input class="form-control" id="password" name="password" type="password" placeholder="Enter a password..." required>
+        <label for="email">Password</label>
+      </div>
+    </div>
+  </div>
+  <div class="row g-3">
+    <div class="col-12">
+      <!-- Phone number input-->
+      <div class="form-floating mb-3">
+        <input class="form-control" id="phone" name="phone" type="tel" placeholder="(123) 456-7890" <#if profile??>value='${(profile.phone)!""}'</#if> required>
+        <label for="phone"><@spring.message "checkout.order-data.phone"/></label>
+      </div>
+    </div>
+  </div>
+</div>

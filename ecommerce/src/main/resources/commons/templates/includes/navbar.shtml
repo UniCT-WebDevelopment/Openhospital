@@ -1,0 +1,37 @@
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg <#if lightTheme??>navbar-light bg-light<#else>navbar-dark bg-dark</#if>">
+    <div class="container px-5">
+        <a href="/${lang}/index"><img src="/assets/<#if lightTheme??>logo.png<#else>logo_white.png</#if>" alt="OpenHospital" id="logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <#if profile??>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle lang_ita" id="navbarDropdownUser" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person"></i> ${(profile.name)!""} ${(profile.surname)!""}</a>
+                        <ul class="dropdown-menu dropdown-menu-end switch-lang" aria-labelledby="navbarDropdownUser">
+                            <li><a class="dropdown-item" href="/${lang}/user-area/my-data"><@spring.message "header.links.login.my-data" /></a></li>
+                            <li><a class="dropdown-item" href="/${lang}/user-area/my-purchases"><@spring.message "header.links.login.my-purchases" /></a></li>
+                            <li><a class="dropdown-item" href='/rest/auth/logout?redirectUrl=${requestPath!""}'><@spring.message "header.links.login.logout" /></a></li>
+                        </ul>
+                    </li>
+                <#else>
+                    <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModalFullscreen"><i class="bi bi-person"></i> <@spring.message "header.links.login" /></a></li>
+                </#if>
+                <li class="nav-item"><a class="nav-link" href="/${lang}/cart"><i class="bi bi-cart3"></i> <@spring.message "header.links.cart" /></a></li>
+                <li class="nav-item dropdown">
+                    <#if lang == "it">
+                        <a class="nav-link dropdown-toggle lang_ita" id="navbarDropdownLang" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><@spring.message "header.links.lang.ita" /></a>
+                        <ul class="dropdown-menu dropdown-menu-end switch-lang" aria-labelledby="navbarDropdownLang">
+                            <li><a class="dropdown-item" href="/en" id="switch-lang-en"><span class="lang lang_eng"><@spring.message "header.links.lang.eng" /></span></a></li>
+                        </ul>
+                    <#else>
+                        <a class="nav-link dropdown-toggle lang_eng" id="navbarDropdownLang" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><@spring.message "header.links.lang.eng" /></a>
+                        <ul class="dropdown-menu dropdown-menu-end switch-lang" aria-labelledby="navbarDropdownLang">
+                            <li><a class="dropdown-item" href="/it" id="switch-lang-it"><span class="lang lang_ita"><@spring.message "header.links.lang.ita" /></span></a></li>
+                        </ul>
+                    </#if>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

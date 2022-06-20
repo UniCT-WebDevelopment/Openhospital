@@ -1,0 +1,11 @@
+
+<!-- Page Content-->
+<section class="bg-light py-5">
+    <div class="container px-5 my-5 result-container">
+        <div class="row gx-5">
+            <div class="text-center">
+                <p class="text-muted"><@spring.message "serp.error.product-not-valid" /></p>
+            </div>
+        </div>
+    </div>
+</section>

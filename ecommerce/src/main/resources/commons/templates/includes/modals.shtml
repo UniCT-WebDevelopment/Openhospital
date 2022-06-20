@@ -1,0 +1,134 @@
+<!-- Full screen login modal -->
+<div class="modal fade" id="loginModalFullscreen" tabindex="-1" aria-labelledby="loginModalFullscreenLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen-sm-down">
+        <form action='/rest/auth/login?redirectUrl=${requestPath!""}' method="post">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalFullscreenLabel"><@spring.message "modals.login.title" /></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="loginEmail" class="col-form-label"><@spring.message "modals.login.email" /></label>
+                        <input type="email" name="email" class="form-control emailValidation" id="loginEmail" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPassword" class="col-form-label"><@spring.message "modals.login.password" /></label>
+                        <input type="password" name="password" class="form-control passwordValidation pwd" id="loginPassword" required>
+                    </div>
+                    <div class="mb-3 d-flex justify-content-center">
+                        <button type="submit" class="btn btn-dark"><@spring.message "modals.login.login-button" /></button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <p><@spring.message "modals.login.registration-title" /></p>
+                    <button type="button" class="btn btn-dark" data-bs-target="#registrationModalFullscreen" data-bs-toggle="modal"><@spring.message "modals.login.registration-button" /></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Full screen registration modal -->
+<div class="modal fade" id="registrationModalFullscreen" tabindex="-1" aria-labelledby="registrationModalFullscreenLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen-sm-down">
+        <form action='/rest/auth/register?redirectUrl=${requestPath!""}' method="post">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registrationModalFullscreenLabel"><@spring.message "modals.registration.title" /></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="registration-userdata mb-5">
+                        <div class="row g-3 align-items-end">
+                            <div class="col-6">
+                                <label for="surname" class="col-form-label"><@spring.message "modals.registration.name" /></label>
+                                <input type="text" name="name" class="form-control" id="name" required>
+                            </div>
+                            <div class="col-6">
+                                <label for="surname" class="col-form-label"><@spring.message "modals.registration.surname" /></label>
+                                <input type="text" name="surname" class="form-control" id="surname" required>
+                            </div>
+                        </div>
+                        <div class="row g-3 align-items-end">
+                            <div class="col-12">
+                                <label for="registrationEmail" class="col-form-label"><@spring.message "modals.registration.email" /></label>
+                                <input type="email" name="email" class="form-control emailValidation" id="registrationEmail" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$">
+                            </div>
+                        </div>
+                        <div class="row g-3 align-items-end">
+                            <div class="col-12">
+                                <label for="registrationPassword" class="col-form-label"><@spring.message "modals.registration.password" /></label>
+                                <input type="password" name="password" class="form-control passwordValidation pwd" id="registrationPassword" required>
+                            </div>
+                        </div>
+                        <div class="row g-3 align-items-end">
+                            <div class="col-12">
+                                <label for="tax-code" class="col-form-label"><@spring.message "modals.registration.tax-code" /></label>
+                                <input type="text" name="taxCode" class="form-control" id="tax-code" required>
+                            </div>
+                        </div>
+                        <div class="row g-3 align-items-end">
+                            <div class="col-12">
+                                <label for="country" class="col-form-label"><@spring.message "modals.registration.country" /></label>
+                                <input type="text" name="country" class="form-control" id="country" required>
+                            </div>
+                        </div>
+                        <div class="row g-3 align-items-end">
+                            <div class="col-6">
+                                <label for="city" class="col-form-label"><@spring.message "modals.registration.city" /></label>
+                                <input type="text" name="city" class="form-control" id="city" required>
+                            </div>
+                            <div class="col-3">
+                                <label for="province" class="col-form-label"><@spring.message "modals.registration.province" /></label>
+                                <input type="text" name="province" class="form-control" id="province" required>
+                            </div>
+                            <div class="col-3">
+                                <label for="postCode" class="col-form-label"><@spring.message "modals.registration.post-code" /></label>
+                                <input type="text" name="postCode" class="form-control" id="postCode" required>
+                            </div>
+                        </div>
+                        <div class="row g-3 align-items-end">
+                            <div class="col-9">
+                                <label for="address" class="col-form-label"><@spring.message "modals.registration.address" /></label>
+                                <input type="text" name="address" class="form-control" id="address" required>
+                            </div>
+                            <div class="col-3">
+                                <label for="addressNumber" class="col-form-label"><@spring.message "modals.registration.address-number" /></label>
+                                <input type="text" name="addressNumber" class="form-control" id="addressNumber" required>
+                            </div>
+                        </div>
+                        <div class="row g-3 align-items-end">
+                            <div class="col-12">
+                                <label for="phone" class="col-form-label"><@spring.message "modals.registration.phone" /></label>
+                                <input type="text" name="phone" class="form-control" id="phone" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="registration-consents">
+                        <div class="form-check mt-3 me-4">
+                            <input class="form-check-input" type="checkbox" name="consent1" id="consent-1">
+                            <label class="form-check-label" for="consent-1">
+                                <@spring.message "modals.registration.consent-1" />
+                            </label>
+                        </div>
+                        <div class="form-check mt-3 me-4">
+                            <input class="form-check-input" type="checkbox" name="consent2" id="consent-2">
+                            <label class="form-check-label" for="consent-2">
+                                <@spring.message "modals.registration.consent-2" />
+                            </label>
+                        </div>
+                        <div class="form-check mt-3 me-4">
+                            <input class="form-check-input" type="checkbox" name="consent3" id="consent-3">
+                            <label class="form-check-label" for="consent-3">
+                                <@spring.message "modals.registration.consent-3" />
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-dark"><@spring.message "modals.registration.registration-button" /></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

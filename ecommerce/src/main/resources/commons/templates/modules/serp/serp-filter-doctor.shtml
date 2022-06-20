@@ -1,0 +1,12 @@
+
+<div class="col-xl-3 d-none d-lg-block">
+  <div class="card h-100 border-2 bg-light">
+    <div class="card-body p-4 py-lg-5">
+      <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="text-center">
+          <p class="text-muted"><@spring.message "serp.filters.no-filter.label" /></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

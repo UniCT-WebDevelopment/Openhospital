@@ -1,0 +1,7 @@
+<#if wards??>
+  <#list wards as ward>
+    <#if ward.wardCode??>
+      <option value="${ward.wardCode}" <#if requestBody?? && requestBody.wardCode?? && ward.wardCode == requestBody.wardCode>selected</#if>>${(ward.wardDescription)!""}</option>
+    </#if>
+  </#list>
+</#if>

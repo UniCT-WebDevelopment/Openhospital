@@ -1,0 +1,53 @@
+<div class="col-xl-9 mb-5">
+    <h2 class="fw-bolder"><@spring.message "cart.main.title"/></h2>
+</div>
+
+<!-- Order detail -->
+<div class="col-xl-9 mb-5 mb-lg-0">
+    <!-- Summary card -->
+    <div class="card shadow mb-3 summary-card">
+        <div class="card-header p-3">
+            <@spring.message "cart.order-detail.summary"/>
+        </div>
+        <div class="card-body p-5">
+            <div class="product-list">
+                <#list cart.elements as productCart>
+                    <form action="/${lang}/delete-from-cart" method="post">
+                        <input type="hidden" name="proposalId" value="${productCart.productProposalId}">
+                        <div class="product">
+                            <div class="row" >
+                                <div class="col-md-9">
+                                    <h5 class="card-title">${(productCart.productDescription)!""}</h5>
+                                    <p class="card-text">${(modelUtils.getPrintableCheckIn(productCart.checkIn))!""}</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <span class="price">${(productCart.price)!""} &euro;</span>
+                                </div>
+                                <div class="col-md-1">
+                                    <div class="actions">
+                                        <button type="submit" class="btn btn-dark"><i class="bi bi-trash"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </#list>
+            </div>
+            <div class="total mt-5">
+                <div class="row border-top border-1 pt-1">
+                    <div class="col-7">
+                        <@spring.message "cart.order-detail.total"/>
+                    </div>
+                    <div class="col-5">
+                        <div class="price">
+                            ${(cart.getTotal())!""} &euro;
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            <a href="/${lang}/checkout" class="btn btn-success w-100 p-2"><@spring.message "cart.order-detail.buy-now"/></a>
+        </div>
+    </div>
+</div>

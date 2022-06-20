@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Modern Business - Start Bootstrap Template</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+        <!-- FontAwesome icons-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- Core theme CSS (includes Bootstrap)
+        <link href="css/styles.css" rel="stylesheet" />-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <!-- Custom CSS (does not include Bootstrap)-->
+        <link href="css/custom.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container px-5">
+                    <img src="assets/logo_white.png" alt="OpenHospital" id="logo">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="my-data.html">My data</a></li>
+                            <li class="nav-item"><a class="nav-link" href="search-result.html">Search Result</a></li>
+                            <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+                            <li class="nav-item"><a class="nav-link" href="cart-empty.html">Cart-empty</a></li>
+                            <li class="nav-item"><a class="nav-link" href="checkout.html">Checkout</a></li>
+                            <li class="nav-item"><a class="nav-link" href="thank-you.html">Thank-you</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+                                    <li><a class="dropdown-item" href="blog-home.html">Blog Home</a></li>
+                                    <li><a class="dropdown-item" href="blog-post.html">Blog Post</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+                                    <li><a class="dropdown-item" href="portfolio-overview.html">Portfolio Overview</a></li>
+                                    <li><a class="dropdown-item" href="portfolio-item.html">Portfolio Item</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownLang" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">ITA</a>
+                                <ul class="dropdown-menu dropdown-menu-end switch-lang" aria-labelledby="navbarDropdownLang">
+                                    <li><a class="dropdown-item" href="/it"><span class="lang lang_ita">ITA</span></a></li>
+                                    <li><a class="dropdown-item" href="/en"><span class="lang lang_eng">ENG</span></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Page Content-->
+            <section class="bg-light py-5">
+                <!-- Edit Widget -->
+                <section id="widget-tabs" class="edit-widget">
+                    <div class="container px-5">
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <button class="nav-link active" id="nav-health-tab" data-bs-toggle="tab" data-bs-target="#nav-health" type="button" role="tab" aria-controls="nav-health" aria-selected="true">
+                                    <span><i class="fas fa-hand-holding-medical"></i> Cerca prestazione</span>
+                                </button>
+                                <button class="nav-link" id="nav-doctor-tab" data-bs-toggle="tab" data-bs-target="#nav-doctor" type="button" role="tab" aria-controls="nav-doctor" aria-selected="false">
+                                    <span><i class="fas fa-user-md"></i> Trova un medico</span>
+                                </button>
+                            </div>
+                        </nav>
+                        <div class="tab-content shadow-lg" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-health" role="tabpanel" aria-labelledby="nav-health-tab">
+                                <div class="header-tab">
+                                    <h2 class="title">Paga online e risparmia</h2>
+                                    <p class="text">Scegli la prestazione sanitaria di cui necessiti, a prezzi vantaggiosi</p>
+                                </div>
+                                <form action="/it/search/health" method="GET">
+                                    <div class="form f-widget-box">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-lg-9">
+                                                <div class="form-floating">
+                                                    <select class="form-select" name="serviceCode" id="service-select" required="">
+                                                        <option value="" hidden=""></option>
+                                                        <option value="CH-001">Chirurgia endocrina</option>
+                                                        <option value="CH-002">Chirurgia otologica</option>
+                                                        <option value="CH-003">Chirurgia parietale</option>
+                                                    </select>
+                                                    <label for="service-select">Prestazione sanitaria</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-lg-3 align-self-center text-center">
+                                                <button type="submit" class="btn btn-dark widget-button">Verifica disponibilità</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="nav-doctor" role="tabpanel" aria-labelledby="nav-doctor-tab">
+                                <div class="header-tab">
+                                    <h2 class="title">Hai bisogno di una prenotazione?</h2>
+                                    <p class="text">Cerca il medico e/o il reparto; potrai ottenere le informazioni di contatto o effettuare una prenotazione online all'orario a te più comodo</p>
+                                </div>
+                                <form action="/it/search/doctor" method="GET">
+                                    <div class="form f-widget-box">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-lg-6">
+                                                <div class="form-floating">
+                                                    <select class="form-select" name="wardCode" id="ward-select" required="">
+                                                        <option value="" hidden=""></option>
+                                                        <option value="CH-001">Allergologia</option>
+                                                        <option value="CH-001">Anatomia Patologica</option>
+                                                        <option value="CH-001">Anestesia E Rianimazione</option>
+                                                        <option value="CH-001">Anestesia E Rianimazione In Urgenza</option>
+                                                        <option value="CH-001">Blocco Operatorio</option>
+                                                        <option value="CH-001">Cardiologia E Scompenso Cardiaco</option>
+                                                        <option value="CH-001">Cardiologia E Utic</option>
+                                                        <option value="CH-001">Centrale Di Sterilizzazione</option>
+                                                        <option value="CH-001">Centro Di Medicina Della Riproduzione E Tecniche Di Fecondazione Assistita</option>
+                                                        <option value="CH-001">Chirurgia Generale</option>
+                                                        <option value="CH-001">Chirurgia Vascolare</option>
+                                                        <option value="CH-001">Day Surgery E Chirurgia Ambulatoriale</option>
+                                                        <option value="CH-001">Dermatologia</option>
+                                                        <option value="CH-001">Diagnostica Ad Alta Complessità</option>
+                                                        <option value="CH-001">Diagnostica Per Immagini / Radiologia</option>
+                                                        <option value="CH-001">Dietologia</option>
+                                                        <option value="CH-001">Dimissioni Ospedaliere Protette</option>
+                                                        <option value="CH-001">Direzione Medica Dei Presidi</option>
+                                                        <option value="CH-001">Direzione Medica: Qualità, Accreditamento E Formazione</option>
+                                                        <option value="CH-001">Ematologia E Centro Trapianti</option>
+                                                        <option value="CH-001">Emodinamica E Cardiologia Interventistica</option>
+                                                        <option value="CH-001">Endocrinologia E Diabetologia</option>
+                                                        <option value="CH-001">Farmacia Interna</option>
+                                                        <option value="CH-001">Fisica Medica Ed Alte Tecnologie</option>
+                                                        <option value="CH-001">Gastroenterologia Ed Endoscopia Digestiva</option>
+                                                        <option value="CH-001">Geriatria</option>
+                                                        <option value="CH-001">Gestione Rischio Clinico E Sicurezza Dei Dipendenti</option>
+                                                        <option value="CH-001">Immunoematologia E Trasfusionale</option>
+                                                        <option value="CH-001">Laboratorio Analisi</option>
+                                                        <option value="CH-001">Malattie Infettive</option>
+                                                        <option value="CH-001">Medicina D'urgenza</option>
+                                                        <option value="CH-001">Medicina Interna</option>
+                                                        <option value="CH-001">Medicina Nucleare</option>
+                                                        <option value="CH-001">Nefrologia E Dialisi</option>
+                                                        <option value="CH-001">Neurochirurgia</option>
+                                                        <option value="CH-001">Neurologia</option>
+                                                        <option value="CH-001">Neuropsichiatria Infantile</option>
+                                                        <option value="CH-001">Nutrizione Artificiale Ospedaliera</option>
+                                                        <option value="CH-001">Oculistica</option>
+                                                        <option value="CH-001">Odontostomatologia</option>
+                                                        <option value="CH-001">Oncologia</option>
+                                                        <option value="CH-001">Ortopedia E Traumatologia</option>
+                                                        <option value="CH-001">Ostetricia E Ginecologia</option>
+                                                        <option value="CH-001">Otorinolaringoiatria</option>
+                                                        <option value="CH-001">Pediatria</option>
+                                                        <option value="CH-001">Pneumologia</option>
+                                                        <option value="CH-001">Poliambulatorio</option>
+                                                        <option value="CH-001">Polo Endoscopico</option>
+                                                        <option value="CH-001">Post Acuzie</option>
+                                                        <option value="CH-001">Professioni Sanitarie Iotr</option>
+                                                        <option value="CH-001">Pronto Soccorso</option>
+                                                        <option value="CH-001">Psicologia Ospedaliera</option>
+                                                        <option value="CH-001">Radiologia Interventistica E Neuroradiologia</option>
+                                                        <option value="CH-001">Radioterapia</option>
+                                                        <option value="CH-001">Riabilitazione</option>
+                                                        <option value="CH-001">Senologia / Breast Unit</option>
+                                                        <option value="CH-001">Servizio Di Igiene Ospedaliera</option>
+                                                        <option value="CH-001">Sicurezza Dei Pazienti E Medicina Competente</option>
+                                                        <option value="CH-001">Stroke Unit</option>
+                                                        <option value="CH-001">Urologia</option>
+                                                    </select>
+                                                    <label for="ward-select">Reparto</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-lg-3">
+                                                <div class="form-floating">
+                                                    <input type="text" class="form-control" name="doctorName" id="floatingDoctorName">
+                                                    <label for="floatingDoctorName">Nome dottore</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-lg-3 align-self-center text-center">
+                                                <button type="submit" class="btn btn-dark widget-button">Cerca</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Search Result -->
+                <div class="container px-5 my-5 result-container">
+                    <div class="row gx-5">
+                        <!-- Column Left-->
+                        <div class="col-xl-3 d-none d-lg-block">
+                            <div class="card h-100 border-2 bg-light">
+                                <div class="card-body p-4 py-lg-5">
+                                    <div class="h-100 d-flex align-items-center justify-content-center">
+                                        <div class="text-center">
+                                            <p class="text-muted">Stai guardando tutte le opzioni disponibili</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Column Center-->
+                        <div class="col-xl-6 mb-5 mb-lg-0">
+                            <!-- Result card 1 -->
+                            <h2 class="fw-bolder mb-3"><span class="service-name"><i class="fas fa-hand-holding-medical"></i> Chirurgia</span>: 2 risultati trovati</h2>
+                            <div class="card mb-3 result-card">
+                                <div class="row no-gutters">
+                                    <div class="col-md-7">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Blefaroplastica</h5>
+                                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                            <p class="card-text d-none"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 mb-5 mb-md-0">
+                                        <div class="d-flex align-items-center justify-content-center h-100">
+                                            <div class="text-center">
+                                                <h5 class="price">3.000 &euro;</h5>
+                                                <a href="#" class="btn btn-dark">Seleziona</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Result card 2 -->
+                            <div class="card mb-3 result-card">
+                                <div class="row no-gutters">
+                                    <div class="col-md-7">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Rinoplastica</h5>
+                                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                            <p class="card-text d-none"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 mb-5 mb-md-0">
+                                        <div class="d-flex align-items-center justify-content-center h-100">
+                                            <div class="text-center">
+                                                <h5 class="price">2.000 &euro;</h5>
+                                                <a href="#" class="btn btn-dark">Seleziona</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Column Right -->
+                        <div class="col-xl-3">
+                            <!-- Contuct Us -->
+                            <div class="card border-1 bg-light mt-xl-5 mb-5">
+                                <div class="card-body p-4 py-lg-5">
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <div class="text-center">
+                                            <div class="h6 fw-bolder">Have more questions?</div>
+                                            <p class="text-muted mb-4">
+                                                Contact us at
+                                                <br />
+                                                <a href="#!">support@domain.com</a>
+                                            </p>
+                                            <div class="h6 fw-bolder">Follow us</div>
+                                            <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-twitter"></i></a>
+                                            <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-facebook"></i></a>
+                                            <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-linkedin"></i></a>
+                                            <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-youtube"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Toll-free Number -->
+                            <div class="card border-success mt-xl-5">
+                                <div class="card-body p-4 py-lg-5" id="toll-free-card">
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <div class="text-center text-success">
+                                            <div class="h6 fw-bolder mb-4">Hai problemi con la prenotazione online?</div>
+                                            <p class="mb-4">
+                                                Contattaci al numero verde
+                                            </p>
+                                            <div class="h6 fw-bolder"><i class="bi bi-telephone"></i> 800 900 600</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; OpenHospital 2022</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="#!">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Terms</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+
+<div class="col-xl-3">
+  <!-- Contact Us -->
+  <div class="card border-1 bg-light mt-xl-5 mb-5">
+    <div class="card-body p-4 py-lg-5">
+      <div class="d-flex align-items-center justify-content-center">
+        <div class="text-center">
+          <div class="h6 fw-bolder"><@spring.message "serp.extra.contact-us.title" /></div>
+          <p class="text-muted mb-4">
+            <@spring.message "serp.extra.contact-us.description" />
+            <br />
+            <a href="#!"><@spring.message "serp.extra.contact-us.email" /></a>
+          </p>
+          <div class="h6 fw-bolder"><@spring.message "serp.extra.contact-us.follow-us" /></div>
+          <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-twitter"></i></a>
+          <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-facebook"></i></a>
+          <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-linkedin"></i></a>
+          <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Toll-free Number -->
+  <div class="card border-success mt-xl-5">
+    <div class="card-body p-4 py-lg-5" id="toll-free-card">
+      <div class="d-flex align-items-center justify-content-center">
+        <div class="text-center text-success">
+          <div class="h6 fw-bolder mb-4"><@spring.message "serp.extra.toll-free.title" /></div>
+          <p class="mb-4">
+            <@spring.message "serp.extra.toll-free.description" />
+          </p>
+          <div class="h6 fw-bolder"><i class="bi bi-telephone"></i> <@spring.message "serp.extra.toll-free.phone-number" /></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

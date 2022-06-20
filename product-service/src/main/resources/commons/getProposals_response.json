@@ -1,0 +1,19 @@
+{
+	"result": {
+		"validResponse": true,
+		"code": "000",
+		"description": "Operation successfully terminated"
+	},
+	"proposals": {
+		"proposalId": 3242342
+		"productType": "healt"
+		"productCode": "CH-001",
+		"productDescription": "asda",
+		"productInformations": "asda",
+		"wardCode": "R-021",
+		"wardDescription": "Chirurgia Generale",
+		"price": "30.00",
+		"availablePlaces": 20,
+		"maxQuantity": 1
+	}
+}

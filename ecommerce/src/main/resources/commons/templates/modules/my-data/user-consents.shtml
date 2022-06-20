@@ -1,0 +1,29 @@
+<div class="p-5">
+  <div class="row g-3">
+    <div class="col mb-3">
+      <span class="fw-bolder"><@spring.message "my-data.user-consents.title"/></span>
+    </div>
+  </div>
+  <div class="row g-3">
+    <div class="registration-consents">
+      <div class="form-check mt-3 me-4">
+        <input class="form-check-input" type="checkbox" name="consent1" id="consent-1" <#if profile?? && profile.consent1?? && profile.consent1 == true>checked</#if>>
+        <label class="form-check-label" for="consent-1">
+          <@spring.message "my-data.user-consents.consent-1" />
+        </label>
+      </div>
+      <div class="form-check mt-3 me-4">
+        <input class="form-check-input" type="checkbox" name="consent2" id="consent-2" <#if profile?? && profile.consent2?? && profile.consent2 == true>checked</#if>>
+        <label class="form-check-label" for="consent-2">
+          <@spring.message "my-data.user-consents.consent-2" />
+        </label>
+      </div>
+      <div class="form-check mt-3 me-4">
+        <input class="form-check-input" type="checkbox" name="consent3" id="consent-3" <#if profile?? && profile.consent3?? && profile.consent3 == true>checked</#if>>
+        <label class="form-check-label" for="consent-3">
+          <@spring.message "my-data.user-consents.consent-3" />
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
